@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication(scanBasePackages = "com.gyan")
-public class DataServiceApplication{
+public class MovieDetailsServiceApplication{
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataServiceApplication.class, args);
+		SpringApplication.run(MovieDetailsServiceApplication.class, args);
 	}
 
     @Bean

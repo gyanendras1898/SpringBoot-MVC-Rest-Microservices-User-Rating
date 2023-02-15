@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gyan</groupId>
-	<artifactId>data-service</artifactId>
+	<artifactId>movie-detail-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>data-service</name>
-	<description>Spring microservice project for data service</description>
+	<name>movie-detail-service</name>
+	<description>Spring microservice project for movie-detail service</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

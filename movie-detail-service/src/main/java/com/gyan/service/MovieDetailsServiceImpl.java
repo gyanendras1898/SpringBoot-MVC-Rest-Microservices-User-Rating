@@ -13,7 +13,7 @@ import com.gyan.bean.Rating;
 import com.gyan.bean.Ratings;
 
 @Service
-public class DataServiceImpl implements DataService {
+public class MovieDetailsServiceImpl implements MovieDetailsService {
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -21,12 +21,9 @@ public class DataServiceImpl implements DataService {
 	@Override
 	public MovieDetailList getMovieDetails(String userId) {
 		Ratings ratings = restTemplate.getForObject("http://localhost:8081/ratings/"+userId, Ratings.class);
-		System.out.println(ratings);
 		MovieDetailList movieDetails = new MovieDetailList(new ArrayList<>());
 		for(Rating rating : ratings.getRatings()) {
-			System.out.println(rating);
 			Movie movie = restTemplate.getForObject("http://localhost:8082/movies/"+rating.getMovieId(), Movie.class);
-			System.out.println(movie);
 			movieDetails.getMovieDetails().add(new MovieDetail(rating.getRatingId(),rating.getUserId(),movie.getMovieName(),rating.getRating()));
 		}
 		return movieDetails;

@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gyan.bean.MovieDetailList;
-import com.gyan.service.DataService;
+import com.gyan.service.MovieDetailsService;
 
 @RestController
-public class DataServiceResource {
+public class MovieDetailsResource {
 
 	@Autowired
-	private DataService dataService;
+	private MovieDetailsService movieDetailsService;
 	
 	@GetMapping(path = "/datas/{uId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<MovieDetailList> getMovieDetailsByUser(@PathVariable("uId") String userId){
-		MovieDetailList movieDetails = dataService.getMovieDetails(userId);
+		MovieDetailList movieDetails = movieDetailsService.getMovieDetails(userId);
 		return new ResponseEntity<MovieDetailList>(movieDetails, HttpStatus.OK);
 		
 	}
