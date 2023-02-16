@@ -17,7 +17,7 @@ public class MovieDetailsResource {
 	@Autowired
 	private MovieDetailsService movieDetailsService;
 	
-	@GetMapping(path = "/datas/{uId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/movies/details/{uId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<MovieDetailList> getMovieDetailsByUser(@PathVariable("uId") String userId){
 		MovieDetailList movieDetails = movieDetailsService.getMovieDetails(userId);
 		return new ResponseEntity<MovieDetailList>(movieDetails, HttpStatus.OK);
