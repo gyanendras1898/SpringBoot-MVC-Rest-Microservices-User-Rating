@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Movie Rating Details</h1>
+	<table border="1">
+		<tr>
+			<td>Rating Id</td>
+			<td>User Id</td>
+			<td>Movie Name</td>
+			<td>Rating</td>
+		</tr>
+		<tr th:each="movie : ${movies}">
+			<td th:text="${movie.ratingId}"></td>
+			<td th:text="${movie.userId}"></td>
+			<td th:text="${movie.movieName}"></td>
+			<td th:text="${movie.rating}"></td>
+		</tr>
+	</table>
+	<br>
+	<a href="./">Go to main Page</a>
+</body>
+</html>
